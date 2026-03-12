@@ -1,0 +1,12 @@
+name: Keep repo active
+on:
+  schedule:
+    - cron: '0 0 */25 * *'  # 每25天跑一次
+  workflow_dispatch:        # 允许手动触发
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Keep alive
+        run: echo "Repository active"
